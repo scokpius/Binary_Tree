@@ -8,7 +8,10 @@ public class BinaryTree {
     public BinaryTree() {
         rootNode = null;
     }
-
+    public boolean isEntity(){
+        if (rootNode != null) return true;
+        return false;
+    }
 
     public void add(int value) {
         new Node().setValue(value);
@@ -44,7 +47,7 @@ public class BinaryTree {
     }
 
 
-    public int  preOrder(BinaryTree binaryTree){
+    public int countNodes(BinaryTree binaryTree){
 
         if (binaryTree.rootNode != null){
             countNode++;

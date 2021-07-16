@@ -13,8 +13,7 @@ public class Main {
         binaryTree.add(12);
 
 
-        System.out.println(binaryTree.getCount());
-        System.out.println(binaryTree.preOrder(binaryTree));
+        System.out.println(binaryTree.countNodes(binaryTree));
 
 
     }
