@@ -12,13 +12,13 @@ public class BinaryTreeTest {
     @Test
     public void checkTheCountNodesInBinaryTree(){
         BinaryTree binaryTree = createBinaryTree();
-        Assert.assertEquals("The number of nodes does not match", 9,binaryTree.countNodes(binaryTree));
+        Assert.assertEquals("The number of nodes does not match", 3,binaryTree.countNodesWithTwoDescendants(binaryTree));
     }
 
     @Test
     public void checkTheCountNodesInBinaryTreeNull(){
         BinaryTree binaryTree = new BinaryTree();
-        Assert.assertEquals("The tree does not exist", 0,binaryTree.countNodes(binaryTree));
+        Assert.assertEquals("The tree does not exist", 0,binaryTree.countNodesWithTwoDescendants(binaryTree));
     }
 
     private BinaryTree createBinaryTree() {

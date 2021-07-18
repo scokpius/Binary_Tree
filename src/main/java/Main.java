@@ -12,8 +12,7 @@ public class Main {
         binaryTree.add(7);
         binaryTree.add(12);
 
-
-        System.out.println(binaryTree.countNodes(binaryTree));
+        System.out.println(binaryTree.countNodesWithTwoDescendants(binaryTree));
 
 
     }
