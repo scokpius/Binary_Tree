@@ -1,7 +1,9 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class BinaryTree {
-    public Node rootNode = null;
+    private Node rootNode = null;
+    List<Node> list = new ArrayList<Node>();
     int countNode = 0;
 
     public BinaryTree() {
@@ -13,7 +15,6 @@ public class BinaryTree {
     }
 
     public void add(int value) {
-   //     new Node().setValue(value);
         if (rootNode == null){
             rootNode = new Node();
             rootNode.setValue(value);
@@ -47,24 +48,32 @@ public class BinaryTree {
             }
         }
     }
-
-
-    public int countNodesWithTwoDescendants(BinaryTree binaryTree){
-
-        if (binaryTree.rootNode != null){
-            if (binaryTree.rootNode.preOrder() == 3)
-                countNode++;
-
-        } else {return countNode;}
-        if (binaryTree.rootNode.getLeftChild() != null){
-            if (binaryTree.rootNode.getLeftChild().preOrder() == 3)
-                countNode ++;
+    public void preOrder(Node node){
+        if (checksNodesWithTwoDescendants(node)){
+            list.add(node);
         }
-        if (binaryTree.rootNode.getRightChild() != null){
-            if (binaryTree.rootNode.getRightChild().preOrder() == 3)
-                countNode ++;
+        if (node.getLeftChild() != null){
+            preOrder(node.getLeftChild());
         }
+        if (node.getRightChild() != null) {
+            preOrder(node.getRightChild());
+        }
+
+    }
+
+    public int countNodesWithTwoDescendants(BinaryTree binaryTree) {
+        if (binaryTree.rootNode == null){
+            return countNode;
+        }
+        preOrder(binaryTree.rootNode);
+        countNode = list.size();
+        list.clear();
         return countNode;
+    }
+
+
+    private boolean checksNodesWithTwoDescendants(Node node) {
+        return node.preOrder() == 3;
     }
 
 }

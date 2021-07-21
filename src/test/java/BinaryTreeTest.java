@@ -9,10 +9,16 @@ public class BinaryTreeTest {
         Assert.assertTrue("The tree does not exist", binaryTree.isEntity());
     }
 
+
     @Test
     public void checkTheCountNodesInBinaryTree(){
-        BinaryTree binaryTree = createBinaryTree();
+        BinaryTree binaryTree = createBinaryTree1();
         Assert.assertEquals("The number of nodes does not match", 3,binaryTree.countNodesWithTwoDescendants(binaryTree));
+    }
+    @Test
+    public void checkTheCountNodesInBinaryTree1(){
+        BinaryTree binaryTree = createBinaryTree();
+        Assert.assertEquals("The number of nodes does not match", 4,binaryTree.countNodesWithTwoDescendants(binaryTree));
     }
 
     @Test
@@ -21,7 +27,7 @@ public class BinaryTreeTest {
         Assert.assertEquals("The tree does not exist", 0,binaryTree.countNodesWithTwoDescendants(binaryTree));
     }
 
-    private BinaryTree createBinaryTree() {
+    private BinaryTree createBinaryTree1() {
         BinaryTree binaryTree = new BinaryTree();
         binaryTree.add(8);
         binaryTree.add(4);
@@ -34,6 +40,20 @@ public class BinaryTreeTest {
         binaryTree.add(12);
         return binaryTree;
     }
-
+    private BinaryTree createBinaryTree() {
+        BinaryTree binaryTree = new BinaryTree();
+        binaryTree.add(7);
+        binaryTree.add(3);
+        binaryTree.add(9);
+        binaryTree.add(2);
+        binaryTree.add(5);
+        binaryTree.add(4);
+        binaryTree.add(6);
+        binaryTree.add(8);
+        binaryTree.add(10);
+        binaryTree.add(12);
+        binaryTree.add(11);
+        return binaryTree;
+    }
 
 }

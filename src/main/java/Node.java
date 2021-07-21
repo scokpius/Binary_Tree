@@ -6,8 +6,9 @@ public class Node {
     Node(){
 
     }
-    int count = 0;
+
     public int  preOrder(){
+        int count = 0;
         count++;
 
         if (leftChild != null){
